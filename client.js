@@ -1,11 +1,11 @@
 #!/usr/bin/env node
-const HyperDHT = require('@hyperswarm/dht')
+const BitDHT = require('@web4/dht')
 const net = require('net')
 const fs = require('fs')
 const argv = require('minimist')(process.argv.slice(2))
 const connHandler = require('./lib.js').connHandler
 
-const helpMsg = `Usage:\nhyperproxy -p port_listen -c conf.json`
+const helpMsg = `Usage:\nbitproxy -p port_listen -c conf.json`
 
 if (argv.help) {
   console.log(helpMsg)
@@ -36,7 +36,7 @@ if (!conf.peer) {
   process.exit(-1)
 }
 
-const dht = new HyperDHT()
+const dht = new BitDHT()
 
 const proxy = net.createServer(c => {
   return connHandler(c, () => {

@@ -1,14 +1,14 @@
-# hyperproxy
+# @web4/bitproxy
 
 
 ### server
 
 ```
-hypertele-server --help
+bitproxy-server --help
 ```
 
 ```
-hypertele-server --gen_seed
+bitproxy-server --gen_seed
 ```
 
 Create a JSON config file for your server
@@ -20,7 +20,7 @@ Create a JSON config file for your server
 
 ```
 # -l 7001 <---- port of the local service you want to expose to the swarm
-hypertele-server -l 7001 -c config-server.json
+bitproxy-server -l 7001 -c config-server.json
 # the command will print out the pubkey
 ```
 
@@ -35,6 +35,6 @@ Create a JSON config file for your client
 ```
 
 ```
-hypertele -p 1337 -c config-client.json
+bitproxy -p 1337 -c config-client.json
 telnet localhost 1337
 ```

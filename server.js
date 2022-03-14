@@ -1,13 +1,13 @@
 #!/usr/bin/env node
-const HyperDHT = require('@hyperswarm/dht')
+const BitDHT = require('@web4/dht')
 const net = require('net')
 const sodium = require('sodium-universal')
 const fs = require('fs')
 const argv = require('minimist')(process.argv.slice(2))
 const connHandler = require('./lib.js').connHandler
 
-const helpMsg = `Usage:\nhyperproxy-server -l port_local -c conf.json ?-k
-hyperproxy-server --gen_seed`
+const helpMsg = `Usage:\nbitproxy-server -l port_local -c conf.json ?-k
+bitproxy-server --gen_seed`
 
 if (argv.help) {
   console.log(helpMsg)
@@ -49,8 +49,8 @@ if (!conf.seed) {
 
 const seed = Buffer.from(conf.seed, 'hex')
 
-const dht = new HyperDHT()
-const keyPair = HyperDHT.keyPair(seed)
+const dht = new BitDHT()
+const keyPair = BitDHT.keyPair(seed)
 
 const server = dht.createServer(c => {
   return connHandler(c, () => {
@@ -59,7 +59,7 @@ const server = dht.createServer(c => {
 })
 
 server.listen(keyPair).then(() => {
-  console.log('hyperproxy:', keyPair.publicKey.toString('hex'))
+  console.log('bitproxy:', keyPair.publicKey.toString('hex'))
 })
 
 process.once('SIGINT', function () {

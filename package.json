@@ -1,25 +1,25 @@
 {
-  "name": "hypertele",
-  "version": "1.0.9",
-  "description": "TCP proxy over Hyperswarm!",
+  "name": "@web4/bitproxy",
+  "version": "1.0.0",
+  "description": "TCP proxy over Bitswarm!",
   "main": "index.js",
   "dependencies": {
-    "@hyperswarm/dht": "next",
+    "@web4/dht": "next",
     "minimist": "^1.2.5"
   },
   "devDependencies": {},
   "bin": {
-    "hypertele-server": "./server.js",
-    "hypertele": "./client.js"
+    "bitproxy-server": "./server.js",
+    "bitproxy": "./client.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bitfinexcom/hypertele.git"
+    "url": "https://github.com/bitwebs/bitproxy.git"
   },
-  "author": "Paolo Ardoino (@bitfinexcom)",
+  "author": "Neo Thawreww (@bitwebs)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bitfinexcom/hypertele/issues"
+    "url": "https://github.com/bitwebs/bitproxy/issues"
   },
-  "homepage": "https://github.com/bitfinexcom/hypertele"
+  "homepage": "https://github.com/bitwebs/bitproxy"
 }
